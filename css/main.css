@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0rem 2rem 0rem;
+    color: white;
+}
+
+body{
+    background: linear-gradient(120deg, rgb(196, 68, 247), rgb(240, 7, 123));
+}
+
+input{
+    outline: none;
+}
+
+button{
+    background: white;
+    color: rgb(196, 68, 247);
+}
+
+.value,.result,.equal, button{
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 0.25rem 1rem 0.25rem 1rem;
+}
+
+#vl3, #vl4{
+    display: none;
+}

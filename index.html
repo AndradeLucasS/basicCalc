@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div>
+        <input type="text" placeholder="Value 1" class="value" id="vl1" oninput="Calc.getValues()">
+        <input type="text" placeholder="Value 2" class="value" id="vl2" oninput="Calc.getValues()">
+        <input type="text" placeholder="Value 3" class="value" id="vl3" oninput="Calc.getValues()">
+        <input type="text" placeholder="Value 4" class="value" id="vl4" oninput="Calc.getValues()">
+        <button id="add">+</button>
+        <button id="sub">-</button>
+        <button id="mul">x</button>
+        <button id="div">/</button>
+        <input type="text" placeholder="Resultado" id="res">
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
