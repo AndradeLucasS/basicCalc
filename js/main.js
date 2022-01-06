@@ -1,50 +1,82 @@
-var type = "sum";
-var showType = document.getElementById("showType");
+let Calc = {
+    type: "sum",
+    showType: document.getElementById("showType"),
+    res, sum, sub, mul, div, value1: null,
+    value2: null,
 
-function doOperation(){
-   var res = document.getElementById("res");
-   switch (type) {
-      case "sum":
-         var sum = parseFloat(document.getElementById("vl1").value) + parseFloat(document.getElementById("vl2").value);
-         res.value = sum;
-         break;
-   
-      case "sub":
-         var sub = parseFloat(document.getElementById("vl1").value) - parseFloat(document.getElementById("vl2").value);
-         res.value = sub;
-         break;
+    startEngine(){
+        this.value1 = document.getElementById("vl1"),
+        this.value2 = document.getElementById("vl2"),
 
-      case "mul":
-         var mul = parseFloat(document.getElementById("vl1").value) * parseFloat(document.getElementById("vl2").value);
-         res.value = mul;
-         break;   
+        this.sum = document.getElementById("sum");
+        this.sub = document.getElementById("sub");
+        this.div = document.getElementById("div");
+        this.mul = document.getElementById("mul");
 
-      case "div":
-         var div = parseFloat(document.getElementById("vl1").value) / parseFloat(document.getElementById("vl2").value);
-         res.value = div;
-         break;   
-   
-      default:
-         break;
-   }
+        this.sum.addEventListener("click",this.typeSum);
+        this.sub.addEventListener("click",this.typeSub);
+        this.div.addEventListener("click",this.typeDiv);
+        this.mul.addEventListener("click",this.typeMul);
+
+        this.value1.addEventListener("keydown", this.actKey);
+
+        this.value2.addEventListener("keydown", this.actKey);
+    },
+
+    startCalc(){
+        this.res = document.getElementById("res");
+
+        switch (this.type) {
+            case "sum":
+               Calc.sum = parseFloat(document.getElementById("vl1").value) + parseFloat(document.getElementById("vl2").value);
+               Calc.res.value = Calc.sum;
+               break;
+         
+            case "sub":
+               Calc.sub = parseFloat(document.getElementById("vl1").value) - parseFloat(document.getElementById("vl2").value);
+               Calc.res.value = Calc.sub;
+               break;
+      
+            case "mul":
+               Calc.mul = parseFloat(document.getElementById("vl1").value) * parseFloat(document.getElementById("vl2").value);
+               Calc.res.value = Calc.mul;
+               break;   
+      
+            case "div":
+               Calc.div = parseFloat(document.getElementById("vl1").value) / parseFloat(document.getElementById("vl2").value);
+               Calc.res.value = Calc.div;
+               break;   
+         
+            default:
+               break;
+        }
+    },
+
+    typeSum(){
+        Calc.type = "sum";
+        Calc.showType.innerHTML = "Your operation is sum";
+    },
+
+    typeSub(){
+        Calc.type = "sub";
+        Calc.showType.innerHTML = "Your operation is subtraction";
+    },
+
+    typeMul(){
+        Calc.type = "mul";
+        Calc.showType.innerHTML = "Your operation is multiplication";
+    },
+
+    typeDiv(){
+        Calc.type = "div";
+        Calc.showType.innerHTML = "Your operation is division";
+    },
+
+    actKey(e){
+        if(e.key === "Enter"){
+            Calc.startCalc();
+        }
+    }
 }
 
-function defTypeSum(){
-   type = "sum";
-   showType.innerHTML = "Your operation is sum";
-}
-
-function defTypeSub(){
-   type = "sub";
-   showType.innerHTML = "Your operation is subtraction";
-}
-
-function defTypeMul(){
-   type = "mul";
-   showType.innerHTML = "Your operation is multiplication";
-}
-
-function defTypeDiv(){
-   type = "div";
-   showType.innerHTML = "Your operation is division";
-}
+Calc.startEngine();

@@ -5,7 +5,7 @@
     transition: 0.5s;
 }
 
-body,.cont{
+body, .cont{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,23 +16,18 @@ body,.cont{
 
 body{
     height: 100vh;
-    background: linear-gradient(135deg, red,purple);
+    background: linear-gradient(135deg, blue,purple);
     animation: backAni 2s ease infinite;
     background-size: 400% 400%;
 }
 
-@keyframes backAni {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
+    @keyframes backAni {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
 
-@keyframes textAni {
-    50%{color:red}
-    100%{color:purple}
-}
-
-h1, #showType{
+h1, h2, #showType{
     display: flex;
     align-items: center;
     align-content: center;
@@ -42,35 +37,59 @@ h1, #showType{
     padding: 1rem;
 }
 
+h2{
+    font-size: 0.75rem;
+}
+
 .cont{
     width: 100%;
 }
 
-#vl1,#vl2,#res,#sum,#sub,#mul,#div,#btnRes{
+#showType{
+    font-size: 0.825rem;
+}
+
+#vl1, #vl2, #res, #sum, #sub, #mul, #div, #btnRes{
     outline: none;
     background: white;
     padding: 0.5rem;
     margin: 0.1rem;
     border: none;
     border-radius: 1rem;
-    color: purple;
+    color: blue;
     font-weight: bold;
     animation: textAni 2s ease infinite;
 }
 
-#vl1:hover,#vl2:hover,#res:hover{
+@keyframes textAni {
+    50%{color:purple}
+    100%{color:blue}
+}
+
+#vl1, #vl2, #res{
+    text-align: center;
+}
+
+#vl1:hover, #vl2:hover, #res:hover{
     background: rgb(209, 209, 209);
 }
 
-#sum,#sub,#mul,#div,#btnRes{
+#sum, #sub, #mul, #div, #btnRes{
     border-radius: 90rem;
     padding-left: 1rem;
     padding-right: 1rem;
     cursor: pointer;
 }
 
-#sum:hover,#sub:hover,#mul:hover,#div:hover,#btnRes:hover{
+#sum:hover, #sub:hover, #mul:hover, #div:hover, #btnRes:hover{
     background: transparent;
     color: white;
     animation: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .cont {
+      display: flex;
+      flex-flow: column wrap;
+    }
+  }

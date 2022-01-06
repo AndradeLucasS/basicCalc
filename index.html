@@ -7,23 +7,23 @@
     <title>basicCalc</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <h1>Calculator</h1>
+    <h1>basicCalc</h1>
+    <h2>Just another basic calculator</h2>
     <div class="cont">
         <input type="number" id="vl1">
-        <input type="button" value="+" id="sum" onclick="defTypeSum()">
-        <input type="button" value="-" id="sub" onclick="defTypeSub()">
-        <input type="button" value="x" id="mul" onclick="defTypeMul()">
-        <input type="button" value="/" id="div" onclick="defTypeDiv()">
+        <input type="button" value="+" id="sum">
+        <input type="button" value="-" id="sub">
+        <input type="button" value="x" id="mul">
+        <input type="button" value="/" id="div">
         <input type="number" id="vl2">
-        <input type="button" id="btnRes" value="=" onclick="doOperation()">
+        <input type="button" id="btnRes" value="=" onclick="Calc.startCalc()">
         <input type="number" id="res">
-        <div id="showType">Your operation is sum</div>
+        <div id="showType">Put your values in the first two entries above, click one of the operations buttons and then click the equals button.</div>
     </div>
-    
     <script src="./js/main.js"></script>
 </body>
 </html>
