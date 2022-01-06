@@ -1,37 +1,76 @@
 *{
     box-sizing: border-box;
-    border: 0;
     margin: 0;
-    padding: 0;
+    font-family: 'Lato', sans-serif;
+    transition: 0.5s;
 }
 
-h1{
+body,.cont{
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 2rem 0rem 2rem 0rem;
+    align-items: center;
+    align-content: center;
+    flex-flow: row wrap;
     color: white;
 }
 
 body{
-    background: linear-gradient(120deg, rgb(196, 68, 247), rgb(240, 7, 123));
+    height: 100vh;
+    background: linear-gradient(135deg, red,purple);
+    animation: backAni 2s ease infinite;
+    background-size: 400% 400%;
 }
 
-input{
+@keyframes backAni {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes textAni {
+    50%{color:red}
+    100%{color:purple}
+}
+
+h1, #showType{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.cont{
+    width: 100%;
+}
+
+#vl1,#vl2,#res,#sum,#sub,#mul,#div,#btnRes{
     outline: none;
-}
-
-button{
     background: white;
-    color: rgb(196, 68, 247);
-}
-
-.value,.result,.equal, button{
-    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0.1rem;
+    border: none;
     border-radius: 1rem;
-    padding: 0.25rem 1rem 0.25rem 1rem;
+    color: purple;
+    font-weight: bold;
+    animation: textAni 2s ease infinite;
 }
 
-#vl3, #vl4{
-    display: none;
+#vl1:hover,#vl2:hover,#res:hover{
+    background: rgb(209, 209, 209);
+}
+
+#sum,#sub,#mul,#div,#btnRes{
+    border-radius: 90rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+#sum:hover,#sub:hover,#mul:hover,#div:hover,#btnRes:hover{
+    background: transparent;
+    color: white;
+    animation: none;
 }

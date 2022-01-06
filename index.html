@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calc</title>
+    <title>basicCalc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <h1>Calculator</h1>
-    <div>
-        <input type="text" placeholder="Value 1" class="value" id="vl1" oninput="Calc.getValues()">
-        <input type="text" placeholder="Value 2" class="value" id="vl2" oninput="Calc.getValues()">
-        <input type="text" placeholder="Value 3" class="value" id="vl3" oninput="Calc.getValues()">
-        <input type="text" placeholder="Value 4" class="value" id="vl4" oninput="Calc.getValues()">
-        <button id="add">+</button>
-        <button id="sub">-</button>
-        <button id="mul">x</button>
-        <button id="div">/</button>
-        <input type="text" placeholder="Resultado" id="res">
+    <div class="cont">
+        <input type="number" id="vl1">
+        <input type="button" value="+" id="sum" onclick="defTypeSum()">
+        <input type="button" value="-" id="sub" onclick="defTypeSub()">
+        <input type="button" value="x" id="mul" onclick="defTypeMul()">
+        <input type="button" value="/" id="div" onclick="defTypeDiv()">
+        <input type="number" id="vl2">
+        <input type="button" id="btnRes" value="=" onclick="doOperation()">
+        <input type="number" id="res">
+        <div id="showType">Your operation is sum</div>
     </div>
+    
     <script src="./js/main.js"></script>
 </body>
 </html>

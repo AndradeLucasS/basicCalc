@@ -1,45 +1,50 @@
-let Calc = {
-   value1: null,
-   value2: null,
-   value3: null,
-   value4: null,
-   sum: document.getElementById("add"),
-   sub: document.getElementById("sub"),
-   mul: document.getElementById("mul"),
-   div: document.getElementById("div"),
-   res: document.getElementById("res"),
+var type = "sum";
+var showType = document.getElementById("showType");
 
-   getValues(){
-      this.value1 = document.getElementById("vl1").value;
-      this.value2 = document.getElementById("vl2").value;
-      this.value3 = document.getElementById("vl3").value;
-      this.value4 = document.getElementById("vl4").value;
-   },
+function doOperation(){
+   var res = document.getElementById("res");
+   switch (type) {
+      case "sum":
+         var sum = parseFloat(document.getElementById("vl1").value) + parseFloat(document.getElementById("vl2").value);
+         res.value = sum;
+         break;
+   
+      case "sub":
+         var sub = parseFloat(document.getElementById("vl1").value) - parseFloat(document.getElementById("vl2").value);
+         res.value = sub;
+         break;
 
-   startCalc(){
-      this.sum.addEventListener("click",this.startSum);
-      this.sub.addEventListener("click",this.startSub);
-      this.mul.addEventListener("click",this.startMul);
-      this.div.addEventListener("click",this.startDiv);
-   },
+      case "mul":
+         var mul = parseFloat(document.getElementById("vl1").value) * parseFloat(document.getElementById("vl2").value);
+         res.value = mul;
+         break;   
 
-   startSum(){
-      console.log(this.value1.value);
-      console.log(this.value2.value);
-      this.res.value = this.value1.value + this.value2.value;
-   },
-
-   startSub(){
-      this.res.value = this.value1.value - this.value2.value;
-   },
-
-   startMul(){
-      this.res.value = this.value1.value * this.value2.value;
-   },
-
-   startDiv(){
-      this.res.value = this.value1.value / this.value2.value;
-   },
+      case "div":
+         var div = parseFloat(document.getElementById("vl1").value) / parseFloat(document.getElementById("vl2").value);
+         res.value = div;
+         break;   
+   
+      default:
+         break;
+   }
 }
 
-Calc.startCalc();
+function defTypeSum(){
+   type = "sum";
+   showType.innerHTML = "Your operation is sum";
+}
+
+function defTypeSub(){
+   type = "sub";
+   showType.innerHTML = "Your operation is subtraction";
+}
+
+function defTypeMul(){
+   type = "mul";
+   showType.innerHTML = "Your operation is multiplication";
+}
+
+function defTypeDiv(){
+   type = "div";
+   showType.innerHTML = "Your operation is division";
+}
